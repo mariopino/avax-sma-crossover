@@ -8,9 +8,9 @@ The script does the following:
 - Initial run with predefined parameters
 - Optimization
 - Run with optimized parameters
-- Generates a candle chart with indicators and trades
-- Generates a Heatmap for the different combination of slow and fast moving averages
-- Export trades to CSV file
+- Generates a candle chart with indicators and trades (SmaCross_n1-10,n2-16_.html)
+- Generates a Heatmap for the different combination of slow and fast moving averages (SmaCross.html)
+- Export trades to CSV file (trades.csv)
 
 The best results were achieved using a 5% stop loss for both SHORT and LONG trades.
 
