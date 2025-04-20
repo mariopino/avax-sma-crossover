@@ -16,10 +16,11 @@ data = yf.download(ticker_name, start='2020-01-01', end='2025-04-20', interval='
 data = data[['Open', 'High', 'Low', 'Close', 'Volume']]
 data.columns = ['Open', 'High', 'Low', 'Close', 'Volume']
 
-# Moving averages
+# Initial run moving averages
 n1 = 35   # Fast
 n2 = 170  # Slow
 
+# Uncomment the following line to see the data before running the backtest
 # print(data.tail())
 
 class SmaCross(Strategy):
@@ -91,7 +92,7 @@ optimization_results, heatmap = bt.optimize(
 # Print optimization results
 best_n1 = optimization_results._strategy.n1
 best_n2 = optimization_results._strategy.n2
-print(f"\nOptimization Results (n1={best_n1}, n2={best_n2}):\n")
+print(f"\nOptimized Backtest Results (n1={best_n1}, n2={best_n2}):\n")
 print(optimization_results)
 
 # Run the backtest with the best parameters
@@ -124,12 +125,12 @@ useful_cols = [col for col in useful_cols if col in trades.columns]
 # Reorder columns
 trades = trades[useful_cols]
 
-# Print the trades of the best run
+# Print the trades
 print("\nBest Run Trades:\n")
 print(trades.to_string())
 
-# Save best run trades to a CSV file
+# Save trades to a CSV file
 trades.to_csv('trades.csv', index=False)
 
-# Plot the best run heatmap
+# Plot Heatmap
 plot_heatmaps(heatmap, agg='mean')
