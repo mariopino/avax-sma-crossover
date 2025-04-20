@@ -114,15 +114,8 @@ trades['ReturnPct'] = np.where(
     (trades['EntryPrice'] - trades['ExitPrice']) / trades['EntryPrice'] * 100
 )
 
-# Calculate trade duration if not already present
-if 'Duration' not in trades.columns and 'EntryTime' in trades and 'ExitTime' in trades:
-    trades['Duration'] = trades['ExitTime'] - trades['EntryTime']
-
-# Define useful columns (check that each actually exists)
+# Cleanup and reorder columns
 useful_cols = ['Type', 'EntryTime', 'ExitTime', 'EntryPrice', 'ExitPrice', 'PnL', 'ReturnPct', 'Duration']
-useful_cols = [col for col in useful_cols if col in trades.columns]
-
-# Reorder columns
 trades = trades[useful_cols]
 
 # Print the trades
