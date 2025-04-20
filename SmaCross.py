@@ -36,7 +36,7 @@ class SmaCross(Strategy):
         current_date = self.data.index[-1]
 
         #
-        # Uncomment one of the following blocks to restrict the backtest to a specific date range
+        # Uncomment one of the following blocks to restrict the backtest to a specific year
         #
 
         # Operate in 2025
