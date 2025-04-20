@@ -32,25 +32,37 @@ class SmaCross(Strategy):
         self.sma2 = self.I(SMA, close, self.n2)
 
     def next(self):
-        # Uncomment one of the following blocks to restrict the backtest to a specific date range
-        # This is useful if you want to test the strategy in a certain date.
-        
+        # Get the current date
+        current_date = self.data.index[-1]
+
         #
-        # Operate from 2025-01-01 onwards
+        # Uncomment one of the following blocks to restrict the backtest to a specific date range
         #
 
-        # current_date = self.data.index[-1]
-        # if current_date < pd.Timestamp('2025-01-01'):
+        # Operate in 2025
+        # if current_date > pd.Timestamp('2025-12-31') or current_date < pd.Timestamp('2025-01-01'):
         #     return
         
-        #
-        # Operate from 2024-01-01 to 2024-12-31
-        #
-
-        # current_date = self.data.index[-1]
+        # Operate in 2024
         # if current_date > pd.Timestamp('2024-12-31') or current_date < pd.Timestamp('2024-01-01'):
         #     return
         
+        # Operate in 2023
+        # if current_date > pd.Timestamp('2023-12-31') or current_date < pd.Timestamp('2023-01-01'):
+        #     return
+
+        # Operate in 2022
+        # if current_date > pd.Timestamp('2022-12-31') or current_date < pd.Timestamp('2022-01-01'):
+        #     return
+
+        # Operate in 2021
+        # if current_date > pd.Timestamp('2021-12-31') or current_date < pd.Timestamp('2021-01-01'):
+        #     return
+        
+        # Operate in 2020
+        # if current_date > pd.Timestamp('2020-12-31') or current_date < pd.Timestamp('2020-01-01'):
+        #     return
+
         if crossover(self.sma1, self.sma2):
             # LONG: If the fast SMA crosses above the slow SMA, close the position and buy
             self.position.close()
@@ -101,7 +113,7 @@ trades['ReturnPct'] = np.where(
     (trades['EntryPrice'] - trades['ExitPrice']) / trades['EntryPrice'] * 100
 )
 
-# Optional: Calculate trade duration if not already present
+# Calculate trade duration if not already present
 if 'Duration' not in trades.columns and 'EntryTime' in trades and 'ExitTime' in trades:
     trades['Duration'] = trades['ExitTime'] - trades['EntryTime']
 
