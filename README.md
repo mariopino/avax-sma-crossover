@@ -1,6 +1,6 @@
-# Backtesting of SMA crossover strategy using AVAX-USD pair
+# Backtesting the SMA crossover strategy on the AVAX-USD pair
 
-Backtest of a simple SMA crossover strategy using [AVAX-USD](https://finance.yahoo.com/quote/AVAX-USD/) pair and [Backtesting.py](https://kernc.github.io/backtesting.py/) Python library.
+Backtesting the SMA crossover strategy on the [AVAX-USD](https://finance.yahoo.com/quote/AVAX-USD/) pair using [Backtesting.py](https://kernc.github.io/backtesting.py/) Python library.
 
 The script does the following:
 
