@@ -3,6 +3,7 @@ from backtesting.lib import crossover, plot_heatmaps
 from backtesting.test import SMA
 import yfinance as yf
 import numpy as np
+import pandas as pd
 
 # Set up parameters
 cash = 10000  # Initial cash amount in USD
@@ -31,12 +32,23 @@ class SmaCross(Strategy):
         self.sma2 = self.I(SMA, close, self.n2)
 
     def next(self):
-        # Uncomment the following lines to restrict the backtest to a specific date range
-        # This is useful if you want to test the strategy only after a certain date.
+        # Uncomment one of the following blocks to restrict the backtest to a specific date range
+        # This is useful if you want to test the strategy in a certain date.
         
+        #
         # Operate from 2025-01-01 onwards
+        #
+
         # current_date = self.data.index[-1]
         # if current_date < pd.Timestamp('2025-01-01'):
+        #     return
+        
+        #
+        # Operate from 2024-01-01 to 2024-12-31
+        #
+
+        # current_date = self.data.index[-1]
+        # if current_date > pd.Timestamp('2024-12-31') or current_date < pd.Timestamp('2024-01-01'):
         #     return
         
         if crossover(self.sma1, self.sma2):
