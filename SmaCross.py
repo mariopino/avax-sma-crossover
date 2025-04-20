@@ -11,8 +11,8 @@ commission = 0.001  # Commission per trade
 exclusive_orders = True  # Only one order at a time
 
 # Download and prepare AVAX-USD data from Yahoo Finance
-tickerName = "AVAX-USD"
-data = yf.download(tickerName, start='2020-01-01', end='2025-04-20', interval='1d')
+ticker_name = "AVAX-USD"
+data = yf.download(ticker_name, start='2020-01-01', end='2025-04-20', interval='1d')
 data = data[['Open', 'High', 'Low', 'Close', 'Volume']]
 data.columns = ['Open', 'High', 'Low', 'Close', 'Volume']
 
