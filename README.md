@@ -19,7 +19,8 @@ Best results were obtained using %5 stop loss on both SHORT and LONG trades.
 ## Clone repository:
 
 ```
-git clone
+git clone https://github.com/mariopino/avax-sma-crossover.git
+cd avax-sma-crossover
 ```
 
 ## Create virtual environment
