@@ -1,18 +1,18 @@
 # Backtesting of SMA crossover strategy using AVAX-USD pair
 
-Backtest of a simple SMA crossover strategy using AVAX-USD pair and Backtesting.py library.
+Backtest of a simple SMA crossover strategy using [AVAX-USD](https://finance.yahoo.com/quote/AVAX-USD/) pair and [Backtesting.py](https://kernc.github.io/backtesting.py/) Python library.
 
 The script does the following:
 
-- Download data from Yahoo Finance
-- Initial run with predefined parameters for fast and slow moving averages
+- Download daily OHLCV data from Yahoo Finance
+- Initial run with predefined parameters
 - Optimization
 - Run with optimized parameters
-- Generates a chart with indicators and trades
+- Generates a candle chart with indicators and trades
 - Generates a Heatmap for the different combination of slow and fast moving averages
 - Export trades to CSV file
 
-Best results were obtained using %5 stop loss on both SHORT and LONG trades.
+The best results were achieved using a 5% stop loss for both SHORT and LONG trades.
 
 # Installation
 
